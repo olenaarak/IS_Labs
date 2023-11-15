@@ -1,0 +1,10 @@
+Child ?child ?parent -> Parent ?parent ?child
+Siblings ?child1 ?child2 & Parent ?parent ?child1 -> Child ?child2 ?parent
+Wife ?h1 ?h2 -> Husband ?h2 ?h1
+Husband ?h1 ?h2 -> Married ?h1 ?h2
+Husband ?h1 ?h2 -> Married ?h2 ?h1
+Parent ?parent ?child & Married ?parent ?parent2 -> Child ?child ?parent2
+Siblings ?h1 ?h2 & Married ?h1 ?h3 -> SiblingInLaw ?h2 ?h3
+Child ?child ?parent & Husband ?h ?child -> SonInLaw ?h ?parent
+Child ?child ?parent & Wife ?h ?child -> DaughterInLaw ?h ?parent
+Child ?child ?parent & Child ?parent ?grandparent -> GrandChild ?child ?grandparent
